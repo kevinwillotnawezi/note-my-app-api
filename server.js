@@ -1,4 +1,4 @@
-//add all imports and initializations of constants
+//add all imports and initializations of constants (same start in all files)
 const http = require('http');
 const app = require('./app');
 
