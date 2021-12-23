@@ -1,4 +1,5 @@
 const User = require('../models/user');
+const bcrypt = require('bcrypt');
 
 exports.signup = (req, res, next) => {
 	// encrypt the password before sendind data to server
