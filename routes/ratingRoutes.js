@@ -7,3 +7,5 @@ router.get('/', ratingController.getAllRatings);
 router.get('/:id', ratingController.getRating);
 router.put('/:id', ratingController.updateRating);
 router.delete('/:id', ratingController.deleteRating);
+
+module.exports = router;
