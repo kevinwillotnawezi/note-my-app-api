@@ -23,10 +23,10 @@ app.use((req, res, next) => {
 	next();
 });
 
-//add Routes to use and JSON parser
+//add JSON parser and Routes to use
+app.use(express.json());
 app.use('/api/auth', userRoutes);
 app.use('/api/rating', ratingRoutes);
 app.use('/api/comment', commentRoutes);
-app.use(express.json());
 
 module.exports = app;
