@@ -26,10 +26,9 @@ exports.getRating = (req, res, next) => {
 
 //Update a Rating is not used yet
 exports.updateRating = (req, res, next) => {
-	Rating.updateOne({ _id: req.params.id }),
-		{ ...req.body, _id: req.params.id }
-			.then(() => res.status(200).json({ message: 'Rating updated' }))
-			.catch((error) => res.status(400).json({ message: error }));
+	Rating.updateOne({ _id: req.params.id }, { ...req.body, _id: req.params.id })
+		.then(() => res.status(200).json({ message: 'Rating updated' }))
+		.catch((error) => res.status(400).json({ message: error }));
 };
 
 //Delete a Rating is not used yet
