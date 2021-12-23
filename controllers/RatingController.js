@@ -1,4 +1,4 @@
-const Rating = require('Rating');
+const Rating = require('../models/rating');
 
 exports.createRating = (req, res, next) => {
 	//delete req.body._id

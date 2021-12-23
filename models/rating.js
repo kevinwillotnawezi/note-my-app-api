@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const ratingSchema = mongoose.Schema.create({
+const ratingSchema = mongoose.Schema({
 	note: { type: Number, required: true },
 	description: { type: String, required: true },
 	user: { type: String, required: true },
