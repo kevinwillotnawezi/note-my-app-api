@@ -8,20 +8,20 @@ exports.createComment = (req, res, next) => {
 	comment
 		.save()
 		.then(() => res.status(201).json({ message: 'Comment registered successfully' }))
-		.catch((err) => res.status(400).json({ message: err }));
+		.catch((error) => res.status(400).json({ message: error }));
 };
 
 exports.getAllComments = (req, res, next) => {
 	Comment.find()
 		.then((comments) => res.status(200).json(comments))
-		.catch((err) => res.status(400).json({ message: err }));
+		.catch((error) => res.status(400).json({ message: error }));
 };
 
 //Get only one comment is not used yet
 exports.getComment = (req, res, next) => {
 	Comment.findOne({ _id: req.params.id })
 		.then((commment) => res.status(200).json(commment))
-		.catch((err) => res.status(400).json({ message: err }));
+		.catch((error) => res.status(400).json({ message: error }));
 };
 
 //Update a comment is not used yet
@@ -29,12 +29,12 @@ exports.updateComment = (req, res, next) => {
 	Comment.updateOne({ _id: req.params.id }),
 		{ ...req.body, _id: req.params.id }
 			.then(() => res.status(200).json({ message: 'Comment updated' }))
-			.catch((err) => res.status(400).json({ message: err }));
+			.catch((error) => res.status(400).json({ message: error }));
 };
 
 //Delete a comment is not used yet
 exports.deleteComment = (req, res, next) => {
 	Comment.deleteOne({ _id: req.params.id })
 		.then(() => res.status(200).json({ message: 'Comment deleted' }))
-		.catch((err) => res.status(400).json({ message: err }));
+		.catch((error) => res.status(400).json({ message: error }));
 };
