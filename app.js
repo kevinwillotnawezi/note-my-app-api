@@ -2,9 +2,9 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
-const userRoutes = require('../routes/userRoutes');
-const ratingRoutes = require('../routes/ratingRoutes');
-const commentRoutes = require('../routes/commentRoutes');
+const userRoutes = require('./routes/userRoutes');
+const ratingRoutes = require('./routes/ratingRoutes');
+const commentRoutes = require('./routes/commentRoutes');
 
 //link to mongodb (nosql)
 mongoose
