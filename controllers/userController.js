@@ -25,7 +25,7 @@ exports.login = (req, res, next) => {
 				return res.status(401).json({ error: 'User not found' });
 			}
 			//check if the password was generated with the same based String
-			bcrypt.compare(req.body.password, req.body.password).then((valid) => {
+			bcrypt.compare(req.body.password, user.password).then((valid) => {
 				if (!valid) {
 					return res.status(401).json({ message: 'Invalid password' });
 				}
