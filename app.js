@@ -3,8 +3,9 @@ const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
 const userRoutes = require('./routes/userRoutes');
-const ratingRoutes = require('./routes/ratingRoutes');
+const feedbackRoutes = require('./routes/feedbackRoutes');
 const commentRoutes = require('./routes/commentRoutes');
+const notationRoutes = require('./routes/notationRoutes');
 
 //link to mongodb (nosql)
 mongoose
@@ -26,7 +27,8 @@ app.use((req, res, next) => {
 //add JSON parser and Routes to use
 app.use(express.json());
 app.use('/api/auth', userRoutes);
-app.use('/api/rating', ratingRoutes);
+app.use('/api/feedback', feedbackRoutes);
 app.use('/api/comment', commentRoutes);
+app.use('/api/notation', notationRoutes);
 
 module.exports = app;
