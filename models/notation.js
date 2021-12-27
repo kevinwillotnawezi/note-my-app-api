@@ -9,7 +9,8 @@ const notationSchema = mongoose.Schema({
 		validate: { validator: Number.isInteger, message: '{VALUE} is not an integer value' },
 	},
 	userId: { type: String, required: true },
-	feedbackId: { type: String, required: true },
+	feedbackId: { type: String },
+	commentId: { type: String },
 });
 
 module.exports = mongoose.model('Notation', notationSchema);
