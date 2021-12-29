@@ -17,6 +17,18 @@ exports.getAllNotations = (req, res, next) => {
 		.catch((error) => res.status(400).json({ message: error }));
 };
 
+exports.getAllNotationsByCommentId = (req, res, next) => {
+	Notation.find({ commentId: req.params.id })
+		.then((notations) => res.status(200).json(notations))
+		.catch((error) => res.status(400).json({ message: error }));
+};
+
+exports.getAllNotationsByFeedbackId = (req, res, next) => {
+	Notation.find({ feedbackId: req.params.id })
+		.then((notations) => res.status(200).json(notations))
+		.catch((error) => res.status(400).json({ message: error }));
+};
+
 //Get only one notation is not used yet
 exports.getNotation = (req, res, next) => {
 	Notation.findOne({ _id: req.params.id })

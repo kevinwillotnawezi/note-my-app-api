@@ -17,6 +17,12 @@ exports.getAllComments = (req, res, next) => {
 		.catch((error) => res.status(400).json({ message: error }));
 };
 
+exports.getAllCommentsByFeedbackId = (req, res, next) => {
+	Notation.find({ feedbackId: req.params.id })
+		.then((notations) => res.status(200).json(notations))
+		.catch((error) => res.status(400).json({ message: error }));
+};
+
 //Get only one comment is not used yet
 exports.getComment = (req, res, next) => {
 	Comment.findOne({ _id: req.params.id })

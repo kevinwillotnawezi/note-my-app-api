@@ -1,7 +1,7 @@
 const Feedback = require('../models/feedback');
 
 exports.createFeedback = (req, res, next) => {
-	// delete req.body._id;
+	// TODO delete req.body._id;
 	const feedback = new Feedback({
 		...req.body,
 	});
