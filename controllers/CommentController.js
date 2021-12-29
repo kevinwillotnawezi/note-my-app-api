@@ -18,7 +18,7 @@ exports.getAllComments = (req, res, next) => {
 };
 
 exports.getAllCommentsByFeedbackId = (req, res, next) => {
-	Notation.find({ feedbackId: req.params.id })
+	Comment.find({ feedbackId: req.params.id })
 		.then((notations) => res.status(200).json(notations))
 		.catch((error) => res.status(400).json({ message: error }));
 };

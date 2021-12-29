@@ -17,14 +17,14 @@ exports.getAllNotations = (req, res, next) => {
 		.catch((error) => res.status(400).json({ message: error }));
 };
 
-exports.getAllNotationsByCommentId = (req, res, next) => {
-	Notation.find({ commentId: req.params.id })
+exports.getNumberOfNotationsByCommentId = (req, res, next) => {
+	Notation.count({ commentId: req.params.id })
 		.then((notations) => res.status(200).json(notations))
 		.catch((error) => res.status(400).json({ message: error }));
 };
 
-exports.getAllNotationsByFeedbackId = (req, res, next) => {
-	Notation.find({ feedbackId: req.params.id })
+exports.getNumberOfNotationsByFeedbackId = (req, res, next) => {
+	Notation.count({ feedbackId: req.params.id })
 		.then((notations) => res.status(200).json(notations))
 		.catch((error) => res.status(400).json({ message: error }));
 };
