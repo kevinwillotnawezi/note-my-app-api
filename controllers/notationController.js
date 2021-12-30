@@ -37,7 +37,7 @@ exports.getNotation = (req, res, next) => {
 };
 
 exports.updateNotation = (req, res, next) => {
-	Notation.updateOne({ _id: req.params.id }, { ...req.body, _id: req.params.id }) //TODO remove second _id?
+	Notation.updateOne({ _id: req.params.id }, { ...req.body, _id: req.params.id })
 		.then(() => res.status(200).json({ message: 'Notation updated' }))
 		.catch((error) => res.status(400).json({ message: error }));
 };

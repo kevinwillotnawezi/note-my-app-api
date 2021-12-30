@@ -31,7 +31,7 @@ exports.getComment = (req, res, next) => {
 };
 
 exports.updateComment = (req, res, next) => {
-	Comment.updateOne({ _id: req.params.id }, { ...req.body, _id: req.params.id }) //TODO remove second _id?
+	Comment.updateOne({ _id: req.params.id }, { ...req.body, _id: req.params.id })
 		.then(() => res.status(200).json({ message: 'Comment updated' }))
 		.catch((error) => res.status(400).json({ message: error }));
 };
