@@ -9,6 +9,7 @@ exports.signup = (req, res, next) => {
 			const user = new User({
 				email: req.body.email,
 				password: hash,
+				privilege: 'user',
 			});
 			user
 				.save()
@@ -29,7 +30,7 @@ exports.login = (req, res, next) => {
 				if (!valid) {
 					return res.status(401).json({ message: 'Invalid password' });
 				}
-				res.status(200).json({ message: 'User successfully logged in' });
+				res.status(200).json(user);
 			});
 		})
 		.catch(() => res.status(404).json({ message: 'User not found' }));
