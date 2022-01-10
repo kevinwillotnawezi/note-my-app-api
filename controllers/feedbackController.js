@@ -16,17 +16,16 @@ exports.getAllFeedbacks = (req, res, next) => {
 		.catch((error) => res.status(400).json({ message: error }));
 };
 
+exports.updateFeedback = (req, res, next) => {
+	Feedback.updateOne({ _id: req.params.id }, { ...req.body, _id: req.params.id })
+		.then(() => res.status(200).json({ message: 'Feedback updated' }))
+		.catch((error) => res.status(400).json({ message: error }));
+};
+
 //Get only one feedback is not used yet
 exports.getFeedback = (req, res, next) => {
 	Feedback.findOne({ _id: req.params.id })
 		.then((feedback) => res.status(200).json(feedback))
-		.catch((error) => res.status(400).json({ message: error }));
-};
-
-//Update a Feedback is not used yet
-exports.updateFeedback = (req, res, next) => {
-	Feedback.updateOne({ _id: req.params.id }, { ...req.body, _id: req.params.id })
-		.then(() => res.status(200).json({ message: 'Feedback updated' }))
 		.catch((error) => res.status(400).json({ message: error }));
 };
 
